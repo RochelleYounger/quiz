@@ -8,11 +8,32 @@
 </head>
 <body>
     <main>
-        <div>
+        <section id="quiz-intro">
             <h1>Quiz Game: Spider Edition</h1>
-            <button>Start</button>
-        </div>
+            <button id="play">Play!</button>
+        </section>
+        <section hidden id="quiz-questions">
+
+            <h2 id="quiz-question"></h2>
+
+            <div id="answer-btns">
+                <button id="answer-btn0" class=""></button>
+                <button id="answer-btn1" class=""></button>
+                <button id="answer-btn2" class=""></button>
+                <button id="answer-btn3" class=""></button>
+            </div>
+
+            <div id="judgement">
+                <p id="judgemental-text"></p>
+            </div>
+
+        </section>
+        <section></section>
+        <section></section>
     </main>
+    <footer>
+        <p>Timer: <span id="timer"></span></p>
+    </footer>
 
     <script src="./assets/js/script.js"></script>
 </body>
