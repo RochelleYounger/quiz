@@ -7,6 +7,10 @@
     <title>Quiz</title>
 </head>
 <body>
+    <header>
+        
+        <a id="see-highscores">View Highscores</a>
+    </header>
     <main>
         <section id="quiz-intro">
             <h1>Quiz Game: Spider Edition</h1>
@@ -28,11 +32,27 @@
             </div>
 
         </section>
-        <section></section>
-        <section></section>
+        <section hidden id="quiz-gameover">
+            <h2>GameOver</h2>
+            <p>Your final score is <span id=score></span>.</p>
+            <form id="username-form">
+                  <label for="username">Enter name: </label>
+                  <input type="text" id="username">
+                  <button id="username-submit">Submit</button>
+            </form>
+        </section>
+        <section hidden id="quiz-highscores">
+            <h2>Highscores</h2>
+            <ol id="highscores">
+            </ol>
+            <div>
+                <button id="return-btn">Return</button>
+                <button id="clear-btn">Clear Highscores</button>
+            </div>
+        </section>
     </main>
     <footer>
-        <p>Timer: <span id="timer"></span></p>
+        <p hidden id="timer-display" >Timer: <span id="timer"></span></p>
     </footer>
 
     <script src="./assets/js/script.js"></script>
