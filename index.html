@@ -1,18 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/css/style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
     <title>Quiz</title>
 </head>
 <body>
+    <header>
+        <a id="see-highscores"><h2>View Highscores</h2></a>
+    </header>
     <main>
-        <div>
+        <section id="quiz-intro">
             <h1>Quiz Game: Spider Edition</h1>
-            <button>Start</button>
-        </div>
+            <button id="play">Play!</button>
+        </section>
+        <section hidden id="quiz-questions" class="questions">
+
+            <h2 id="quiz-question"></h2>
+
+            <img id="quiz-image" />
+
+            <div id="answer-btns">
+                <button id="answer-btn0" class=""></button>
+                <button id="answer-btn1" class=""></button>
+                <button id="answer-btn2" class=""></button>
+                <button id="answer-btn3" class=""></button>
+            </div>
+
+            <div id="judgement">
+                <p id="judgemental-text"></p>
+            </div>
+
+        </section>
+        <section hidden id="quiz-gameover">
+            <h2>GameOver</h2>
+            <p>Your final score is <span id=score></span>.</p>
+            <form id="username-form">
+                  <label for="username">Enter name: </label>
+                  <input type="text" id="username">
+                  <button id="username-submit">Submit</button>
+            </form>
+        </section>
+        <section hidden id="quiz-highscores">
+            <h2>Highscores</h2>
+            <ol id="highscores">
+            </ol>
+            <div>
+                <button id="return-btn">Return</button>
+                <button id="clear-btn">Clear</button>
+            </div>
+        </section>
     </main>
+    <footer>
+        <p hidden id="timer-display" >Timer: <span id="timer"></span></p>
+    </footer>
 
     <script src="./assets/js/script.js"></script>
 </body>
