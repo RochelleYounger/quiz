@@ -2,73 +2,73 @@
 var quizObjects = [
     {
         question: "A spider has __ legs.",
-        img: "",
+        img: "./assets/images/img1.jpg",
         answers: ["a) 1000", "b) 6", "c) 8", "d) 10"],
         correct: "c) 8",
     },
     {
         question: "A spider has __ eyes.",
-        img: "",
+        img: "./assets/images/img2.jpg",
         answers: ["a) 4", "b) 2", "c) 7", "d) 8"],
         correct: "d) 8",
     },
     {
         question: "Spiders have two main body parts: the _________ and the _________.",
-        img: "",
+        img: "./assets/images/img3.jpg",
         answers: ["a) cephalothorax, abdomen", "b) head, cephalothorax", "c) pronotoum, abdomen", "d) mandibles, sting"],
         correct: "a) cephalothorax, abdomen",
     },
     {
         question: "Except for one small family ___________, all spiders have venom which they inject into prey through their fangs to digest them.",
-        img: "",
+        img: "./assets/images/img4.jpg",
         answers: ["a) Agelenidae", "b) Theraphosidae", "c) Salticidae", "d) Uloboridae"],
         correct: "d) Uloboridae",
     },
     {
         question: "Jumping spiders don't build webs.",
-        img: "",
+        img: "./assets/images/img5.jpg",
         answers: ["a) true", "b) false", "c) I don't know.", "d) yes and no"],
         correct: "a) true",
     },
     {
         question: "Lucas the Spider is a jumping spider.",
-        img: "",
+        img: "./assets/images/img6.jpg",
         answers: ["a) true", "b) false", "c) I don't know.", "d) yes and no"],
         correct: "a) true",
     },
     {
         question: "There is a species of herbivore(ish) jumping spiders that are found in Central America. It's name is ____________",
-        img: "",
+        img: "./assets/images/img7.jpg",
         answers: ["a) Ero furcata", "b) Bagheera kiplingi", "c) Phidippus pius", "d) Plexippus paykulli"],
         correct: "b) Bagheera kiplingi",
     },
     {
         question: "The scientific name for spiders is _________",
-        img: "",
+        img: "./assets/images/img8.jpg",
         answers: ["a) Spider", "b) Anarae", "c) Araignée", "d) Araneae"],
         correct: "d) Araneae",
     },
     {
         question: "The full scientific classification for spiders is: Kingdom-________, Phylum-_________, Subphylum-_________, Class-__________, Order-__________",
-        img: "",
+        img: "./assets/images/img9.jpg",
         answers: ["a) Arthropoda, Chelicerata, Animalia, Arachnida, Araneae", "b) Animalia, Arthropoda, Chelicerata, Arachnida, Araneae", "c) Animalia, Chelicerata, Arthropoda, Arachnida, Araneae", "d) Chelicerata, Arthropoda, Animalia, Araneae, Arichnida"],
         correct: "b) Animalia, Arthropoda, Chelicerata, Arachnida, Araneae",
     },
     {
         question: "Most spiders are harmful to humans.",
-        img: "",
+        img: "./assets/images/img10.jpg",
         answers: ["a) true", "b) false", "c) I don't know.", "d) yes and no"],
         correct: "b) false",
     },
     {
         question: "Extreme or irrational fear of spiders is called _____________",
-        img: "",
+        img: "./assets/images/img11.jpg",
         answers: ["a) arachnophobia", "b) arachniphobia", "c) arachnephobia", "d) arachnaphobia"],
         correct: "a) arachnophobia",
     },
     {
         question: "Spiders are awesome.",
-        img: "",
+        img: "./assets/images/img12.jpg",
         answers: ["a) true", "b) false", "c) I don't know.", "d) yes and no"],
         correct: "a) true",
     },
@@ -136,7 +136,6 @@ var countdown = function() {
     }
 };
 
-// displays the countdown 
 var timer = function() {
     timerContainerEl.removeAttribute("hidden");
     timerEl.textContent = time;
@@ -148,6 +147,10 @@ var askQuestion = function() {
 
     var questionTextEl = document.getElementById("quiz-question");
     questionTextEl.textContent = questionInfo.question;
+
+    var imageEl = document.getElementById("quiz-image");
+    console.log(imageEl);
+    imageEl.setAttribute("src", questionInfo.img);
 
     for (var i=0; i < responses.length; i++) {
         var answer = responses[i];
@@ -169,13 +172,13 @@ var answerCheck = function(event) {
     judgementDivEl.removeAttribute("hidden");
     if (correct(clickedAnswer)) {
         console.log("right");
-        judgementalText = "Satisfactory";
+        judgementalText.textContent = "Satisfactory";
         setTimeout(hideJudgement, 1000);
         correctAnswers++;
         console.log(correctAnswers);
     } else {
         console.log("wrong")
-        judgementalText = "Failure :|";
+        judgementalText.textContent = "Failure :|";
         setTimeout(hideJudgement, 1000);
         if(time >= 6) {
             time = time - 6;
@@ -311,35 +314,3 @@ highscoresClearBtn.addEventListener("click", clearList);
 returnBtn.addEventListener("click", restartQuiz)
 // go to highscore section
 seeHighscoresEl.addEventListener("click", viewHighscores)
-
-
-
-
-// var pointsAwarded = function(){
-//     var points = (correctAnswers * 100) + (time * 10);
-//     return points;
-// }
-
-// var stop = function() {
-//     clearInterval(currentInterval);
-//     hide();
-//     gameOverSection.removeAttribute("hidden");
-//     console.log("gameOver")
-//     userScore.textContent = pointsAwarded();
-//     console.log(userScore.textContent);
-// };
-
-// var saveScore = function(event) {
-//     event.preventDefault();
-    
-//     // validate
-//     if (!usernameInput.value) {
-//         alert("Field cannot be left empty");
-//         return;
-//     }
-
-//     var scoreItemObject = {
-//         username = usernameInput.value,
-//         score: pointsAwarded(),
-//     };
-// };

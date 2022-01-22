@@ -1,24 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/css/style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
     <title>Quiz</title>
 </head>
 <body>
     <header>
-        
-        <a id="see-highscores">View Highscores</a>
+        <a id="see-highscores"><h2>View Highscores</h2></a>
     </header>
     <main>
         <section id="quiz-intro">
             <h1>Quiz Game: Spider Edition</h1>
             <button id="play">Play!</button>
         </section>
-        <section hidden id="quiz-questions">
+        <section hidden id="quiz-questions" class="questions">
 
             <h2 id="quiz-question"></h2>
+
+            <img id="quiz-image" />
 
             <div id="answer-btns">
                 <button id="answer-btn0" class=""></button>
@@ -47,7 +48,7 @@
             </ol>
             <div>
                 <button id="return-btn">Return</button>
-                <button id="clear-btn">Clear Highscores</button>
+                <button id="clear-btn">Clear</button>
             </div>
         </section>
     </main>
